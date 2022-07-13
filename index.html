@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/scripts/main-scripts.js"></script>
+    <title>Trivify</title>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img class="top-bar__logo" src="img/logo-trivify-gray.png" alt="logo de Trivify">
+            <img class="top-bar__toggle-menu" src="img/toggle-menu-button.png" alt="toggle meny button">
+        </div>
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link">Inicio</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link">Trivial</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link">Pasapalabra</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#" class="main-menu__link">Cartas</a>
+                </li>
+                <li class="main-menu__item">
+                    <a href="#contact" class="main-menu__link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="juegos__tittle">Juegos para llenar tu bar</h1>
+
+    <section class="juegos">
+
+        <div class="product">    
+            <div class="product__img">
+                <img class="product__img--img" src="img/trivial-image.jpg">
+            </div>
+            <div class="product__info">
+                <h2 class="product__info--tittle">Trivial para bares</h2>
+                <p class="product__info--p">Un evento rentable y eficaz para atraer nuevos clientes y fidelizarlos. 
+                    Aumenta la facturación ofreciendo un evento divertido y de calidad.
+                </p>
+                <button class="button">Más información</button>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="product__img">
+                <img class="product__img--img" src="img/pasapalabra-para-bares-imagen.jpg">
+            </div>
+            
+            <div class="product__info">
+                <h2 class="product-info__tittle">Pasapalabra para bares</h2>
+                <p class="product-info__p">Atrae a más clientes con el Gran Bote. Un rosco con divertidos
+                     minijuegos y preguntas diferentes.<br> ¡Nuestro juego estrella!
+                </p>
+                <button class="button">Más información</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact" >
+        <h2 class="section-tittle">Contacta con nosotros</h2>
+        <form class="contact__form">                      
+            <input class="contact__form-name" type="text" required placeholder="Nombre">
+            <input class="contact__form-email" type="text" required placeholder="Email">
+            <input class="contact__form-phone" type="text" placeholder="Teléfono">
+            <label class="contact__form-textphone" for="contact-by-phone">¿Te llamamos?:</label>
+            <input class="contact__form-checkphone" id="contact-by-phone" type="checkbox">
+            <textarea class="contact__form-text-to-submit" required placeholder="Escribe tu mensaje..." rows="" cols=""></textarea>
+            <input class="button contact__form--button" type="submit">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__menu">
+            <a href="#">Legal</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Política de cookies</a>
+        </div>
+    </footer>
+        
+</body>
+</html>

@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;    
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;  
+
+}
+
+h2{
+    font-size: 2em;
+    margin: 0;
+}
+
+p{
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.top-bar{
+    background-color:#253137;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-bar__logo{
+    height: 80px;
+}
+
+.top-bar__toggle-menu{
+    height: 30px;
+    cursor: pointer;
+}
+
+.main-menu{ 
+    list-style: none;
+    margin: 0;    
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: #fabf2b;
+}
+
+.main-menu a{
+    color: black;
+   
+}
+
+.main-menu__item{
+    padding: 10px;
+    width: 200vh;
+    text-align: center;
+
+}
+
+.main-menu__item:hover{
+    background-color: #fdce57
+}
+
+.juegos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product{
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    margin: 25px;
+    box-shadow: 1px 1px 8px #02201a3a;
+    border-radius: 4px;
+    width: 440px;
+    height: 480px;
+    transition: 0.3s;    
+}
+
+.product:hover{
+    box-shadow: 4px 4px 16px #02201a3a;
+}
+
+.product__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    
+}
+
+@media screen and (min-width:1000px) {
+    .juegos{
+  
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .product__img{
+        min-width: 440px;
+    }
+
+    .top-bar__toggle-menu{
+        display: none;
+    }
+
+    .main-menu{
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+}
+
+.button{
+    width: 215px;
+    height: 35px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-style: solid;
+    border-width: 0px 2px 2px 0px;
+    border-color: gray;
+    border-radius: 3px;
+    background-color: #fabf2b;
+    transition: 0.1s;
+}
+
+.button:hover{
+    cursor: pointer;    
+    border-style: none;
+    
+}
+
+.section-tittle{
+    text-align: center;
+}
+
+.contact{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1b1d;
+    color: #798b95;    
+}
+
+.contact__form{
+    margin: 20px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr 1fr;     
+}
+
+.contact__form input, .contact__form label{
+    margin: 5px;
+    height: 30px;
+}
+
+.contact__form-name{
+    grid-column: 1/3;
+}
+
+.contact__form-checkphone{
+    
+    justify-self: left;
+    width: 15px;
+
+}
+
+.contact__form-textphone{
+    justify-self: center;
+    
+}
+
+.contact__form-text-to-submit{
+    grid-column: 1 / span 2;
+    height: 70px;
+    margin: 5px;
+}
+
+.contact__form--button{
+    grid-column: 1/3;
+    justify-self: center;
+    width: 150px;
+}
+
+.contact__form--button:hover{
+    border: 1px solid black;
+}
+
+.footer{
+    background-color: #253137;
+    padding: 20px;
+}
+
+.footer__menu{
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+}
+
+.footer__menu a{
+    color: #798b95;
+    font-weight: 500;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;  
+    
+}
+
+.square{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 300px;
+    width: 300px;
+    border: solid black 1px;
+
+    
+}
+
+.square__button{
+    border: solid rgba(0, 0, 0, 0.278) 1px;
+    background-color: #ffffff;
+    height: 1fr;
+    width: 1fr;
+    transition: 0.3s;
+
+}
+
+.square__button:hover{
+    background-color: #f0fffb;
+}
