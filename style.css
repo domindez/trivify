@@ -7,6 +7,12 @@ img{
     max-width: 100%;
 }
 
+body{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -103,7 +109,7 @@ a{
 
 .main-menu__item:hover{
     background-color: #fdce57;
-    width:50vh;
+    width:45vh;
 }
 
 /* -------------------------- Juegos -------------------------- */
@@ -167,6 +173,10 @@ a{
 
     .lema{
         display: none;
+    }
+
+    .main-menu__item:hover{
+        width: auto;
     }
 }
 
@@ -249,11 +259,16 @@ a{
     border: 1px solid black;
 }
 
-/* -------------------------- Footer -------------------------- */
-
+/* -------------------------- Footer -------------------------- /
+Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla hay que:
+- darle display flex al body
+- darle flexdirection: column al body
+- darle margin-top:auto al footer
+/ -------------------------- Footer -------------------------- */
 .footer{
     background-color: #253137;
     padding: 20px;
+    margin-top: auto;
 }
 
 .footer__menu{
@@ -267,7 +282,18 @@ a{
     font-weight: 500;
 }
 
+
+
 /* -------------------------- Juego -------------------------- */
+
+.juegos__tittle{
+    margin-top: 30px;
+}
+
+.juegos__subtittle{
+    text-align: center;
+    margin-top: -10px;
+}
 
 .game{
     display: flex;
@@ -284,6 +310,7 @@ a{
     height: 300px;
     width: 300px;
     border: solid black 1px;
+    margin-top: 30px;
 
 }
 
@@ -296,9 +323,18 @@ a{
 }
 
 .green{
-    background-color: rgb(135, 243, 144);
+    background-color: rgb(167, 255, 174);
 }
 
 .red{
-    background-color: red;
+    background-color: rgb(254, 176, 176);
+}
+
+.head-color{
+    background-color: rgb(169, 251, 219);
+
+}
+
+.end{
+    background-color: #ffee8b;
 }

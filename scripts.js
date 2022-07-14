@@ -32,114 +32,152 @@ const grid = [
       cell: b11, 
       id: 'b11',
       head: true,
+      death: false,
     },
     {
       adjacentCells: ['b11', 'b31', 'b22'],
       cell: b21,
       id: 'b21',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b21', 'b41', 'b32'],
       cell: b31,
       id: 'b31',
       head: false,
+      death: true,
     },
     {
       adjacentCells: ['b31', 'b42'],
       cell: b41,
       id: 'b41',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b11', 'b22', 'b13'],
       cell: b12,
       id: 'b12',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b12', 'b32', 'b21', 'b23'],
       cell: b22,
       id: 'b22',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b31', 'b22', 'b33', 'b42'],
       cell: b32,
       id: 'b32',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b41', 'b32', 'b43'],
       cell: b42,
       id: 'b42',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b12', 'b23', 'b14'],
       cell: b13,
       id: 'b13',
       head: false,
+      death: true,
     },
     {
       adjacentCells: ['b22', 'b33', 'b24', 'b13'],
       cell: b23,
       id: 'b23',
       head: false,
+      death: true,
     },
     {
       adjacentCells: ['b32', 'b34', 'b23', 'b43'],
       cell: b33,
       id: 'b33',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b42', 'b44', 'b33'],
       cell: b43,
       id: 'b43',
       head: false,
+      death: true,
     },
     {
       adjacentCells: ['b13', 'b24'],
       cell: b14,
       id: 'b14',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b14', 'b23', 'b34'],
       cell: b24,
       id: 'b24',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b24', 'b33', 'b44'],
       cell: b34,
       id: 'b34',
       head: false,
+      death: false,
     },
     {
       adjacentCells: ['b43', 'b34'],
       cell: b44,
       id: 'b44',
       head: false,
+      death: false,
     },
-
 ]
 
+
+function endgame(cellWithDeath) {
+  
+  // TO DO 
+  // Hacer que la función espere unos segundos y restablezca el tablero.
+  // Que sume uno a un contador de intentos
+
+  // Hacer tb que por cada pared que
+
+}
+
 grid.forEach((element) => {
-    element.cell.addEventListener("click", function establishColor() {
-      if (this.classList.contains("death")) {
-        this.classList.add("red");
-      } else {
-        element.adjacentCells.forEach((e) => {
-          const selectedCell = grid.find((cell) => cell.id === e);
-          if (selectedCell.head && selectedCell && selectedCell.cell.classList.contains("green") && !this.classList.add("green")) {
-            this.classList.add("green");
+
+    element.cell.addEventListener("click", function establishColor() {     
+
+      element.adjacentCells.forEach((e) => {
+
+        const selectedCell = grid.find((cell) => cell.id === e);
+
+        if (selectedCell.head && selectedCell.cell.classList.contains("green") && element.death == false && !element.cell.classList.contains("green")) {    // si pulsas una sin muerte
             
-          }
-        });
-      }
-    });
+          this.classList.add("green");   
+          element.head=true;   // el que clicas
+          selectedCell.head=false;  // el anterior
+          this.classList.add("head-color");
+          selectedCell.cell.classList.remove("head-color");
+
+          
+        }
+        else if (selectedCell.head && selectedCell.cell.classList.contains("green") && element.death) {    // si pulsas una muerte
+
+          this.classList.add("red");
+          endgame(element.cell);
+        
+        }
+      });        
+      });
   });
 
 
