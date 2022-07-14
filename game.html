@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="scripts.js"></script>
     <title>Juego de Trivify</title>
 </head>
 <body>
     <header>
         <div class="top-bar">
             <img class="top-bar__logo" src="img/logo-trivify-gray.png" alt="logo de Trivify">
-            <img class="top-bar__toggle-menu" src="img/toggle-menu-button.png" alt="toggle meny button">
+            <img id="toggleButton" class="top-bar__toggle-menu" src="img/toggle-menu-button.png" alt="toggle meny button">
         </div>
         <nav class="main-nav">
-            <ul class="main-menu">
+            <ul class="main-menu" id="main-menu">
                 <li class="main-menu__item">
-                    <a href="#" class="main-menu__link">Inicio</a>
+                    <a href="index.html" class="main-menu__link">Inicio</a>
                 </li>
                 <li class="main-menu__item">
                     <a href="#" class="main-menu__link">Trivial</a>
@@ -29,36 +28,49 @@
                     <a href="#" class="main-menu__link">Cartas</a>
                 </li>
                 <li class="main-menu__item">
+                    <a href="game.html" class="main-menu__link">Juego</a>
+                </li>
+                <li class="main-menu__item">
                     <a href="#contact" class="main-menu__link">Contacto</a>
                 </li>
             </ul>
         </nav>
+        <h2 class="lema">Nos dedicamos a llenar tu bar</h2>
     </header>
 
     <h1 class="juegos__tittle">El juego diario de Trivify</h1>
 
     <section class="game">
-        <div class="square">
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-            <button class="square__button"></button>
-                        
-        </div>
+        <div id="square" class="square">
 
+            <button id="b11" class="square__button green"></button>
+            <button id="b21" class="square__button"></button>
+            <button id="b31" class="square__button"></button>
+            <button id="b41" class="square__button"></button>
+            <button id="b12" class="square__button"></button>
+            <button id="b22" class="square__button"></button>
+            <button id="b32" class="square__button"></button>
+            <button id="b42" class="square__button"></button>
+            <button id="b13" class="square__button"></button>
+            <button id="b23" class="square__button"></button>
+            <button id="b33" class="square__button"></button>
+            <button id="b43" class="square__button"></button>
+            <button id="b14" class="square__button"></button>
+            <button id="b24" class="square__button"></button>
+            <button id="b34" class="square__button"></button>
+            <button id="b44" class="square__button"></button>                   
+            
+        </div>
     </section>
-    
+
+    <footer class="footer">
+        <div class="footer__menu">
+            <a href="#">Legal</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Política de cookies</a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

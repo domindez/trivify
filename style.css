@@ -36,12 +36,16 @@ a{
     text-decoration: none;
 }
 
+/* -------------------------- Top Bar -------------------------- */
+
 .top-bar{
     background-color:#253137;
     padding: 10px 0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 
 .top-bar__logo{
@@ -53,7 +57,18 @@ a{
     cursor: pointer;
 }
 
+.lema{
+    font-size: 1em;
+    padding: 8px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #fabf2b;
+}
+
+/* -------------------------- Main Menu -------------------------- */
+
 .main-menu{ 
+    z-index: 0;
     list-style: none;
     margin: 0;    
     padding: 0;
@@ -63,6 +78,16 @@ a{
     font-size: 1em;
     font-weight: 600;
     background-color: #fabf2b;
+    transform: translateY(-150%);
+    transition: 0.2s;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    
+}
+
+.menu-show{
+    transform: translateY(0%);
 }
 
 .main-menu a{
@@ -72,14 +97,16 @@ a{
 
 .main-menu__item{
     padding: 10px;
-    width: 200vh;
     text-align: center;
 
 }
 
 .main-menu__item:hover{
-    background-color: #fdce57
+    background-color: #fdce57;
+    width:50vh;
 }
+
+/* -------------------------- Juegos -------------------------- */
 
 .juegos{
     display: flex;
@@ -107,10 +134,10 @@ a{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 20px;
-
-    
+    padding: 20px;    
 }
+
+/* -------------------------- PC -------------------------- */
 
 @media screen and (min-width:1000px) {
     .juegos{
@@ -128,11 +155,18 @@ a{
     }
 
     .main-menu{
+        transform: translateY(0);
+        position: relative;
         flex-direction: row;
         justify-content: center;
         gap: 50px;
         padding-left: 400px;
         padding-right: 400px;
+        width: auto;
+    }
+
+    .lema{
+        display: none;
     }
 }
 
@@ -158,6 +192,8 @@ a{
 .section-tittle{
     text-align: center;
 }
+
+/* -------------------------- Contacto -------------------------- */
 
 .contact{
     padding-top: 30px;
@@ -213,6 +249,8 @@ a{
     border: 1px solid black;
 }
 
+/* -------------------------- Footer -------------------------- */
+
 .footer{
     background-color: #253137;
     padding: 20px;
@@ -229,22 +267,24 @@ a{
     font-weight: 500;
 }
 
+/* -------------------------- Juego -------------------------- */
+
 .game{
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;  
-    
+    margin-bottom: 50px; 
+
 }
 
 .square{
     background-color: gray;
     display: grid;
     grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
     height: 300px;
     width: 300px;
     border: solid black 1px;
 
-    
 }
 
 .square__button{
@@ -253,9 +293,12 @@ a{
     height: 1fr;
     width: 1fr;
     transition: 0.3s;
-
 }
 
-.square__button:hover{
-    background-color: #f0fffb;
+.green{
+    background-color: rgb(135, 243, 144);
+}
+
+.red{
+    background-color: red;
 }
