@@ -214,7 +214,7 @@ const grid = [
       death: false,
     },
     {
-      adjacentCells: ['b43', 'b45', 'b34', 'b53'],
+      adjacentCells: ['b43', 'b45', 'b34', 'b54'],
       cell: b44,
       id: 'b44',
       head: false,
@@ -451,7 +451,7 @@ const grid = [
 const deathTiles = grid.filter(obj => {
   return obj.id == "b24" || obj.id === "b26" || obj.id === "b36" || obj.id === "b41" || obj.id === "b44"
   || obj.id === "b62" || obj.id === "b65" || obj.id === "b73" || obj.id === "b86" || obj.id === "b81"
-  || obj.id === "b83" || obj.id === "b84" || obj.id === "b85" || obj.id === "b23"
+  || obj.id === "b84" || obj.id === "b85" || obj.id === "b23"
 })
 
 // Aplicar trampa a las casillas
@@ -498,7 +498,7 @@ grid.forEach((element) => {
 
           selectedCell.head=false;
 
-          setTimeout(endgame, 3000);
+          setTimeout(endgame, 2000);
           
           
         
