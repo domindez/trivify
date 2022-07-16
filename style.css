@@ -237,6 +237,7 @@ a{
 .contact__form input, .contact__form label{
     margin: 5px;
     height: 30px;
+    width: auto;
 }
 
 .contact__form-name{
