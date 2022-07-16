@@ -224,8 +224,10 @@ a{
 }
 
 .contact__form{
-    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
+    justify-content: space-around;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 2fr 1fr;     
 }
