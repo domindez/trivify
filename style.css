@@ -148,6 +148,10 @@ a{
     padding: 20px;    
 }
 
+.product-info__tittle{
+    text-align: center;
+}
+
 /* -------------------------- PC -------------------------- */
 
 @media screen and (min-width:1000px) {
