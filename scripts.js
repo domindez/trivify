@@ -1,3 +1,5 @@
+//import myFunc from "./resources.js"
+//const {  } = myFunc;
 
 // Toggle Menu
 
@@ -64,6 +66,7 @@ const b95 = document.getElementById("b95");
 const b96 = document.getElementById("b96");
 
 
+// Objetos del grid
 
 const grid = [
     { 
@@ -448,6 +451,7 @@ const grid = [
 ]
 
 // Lista de casillas trampa
+
 const deathTiles = grid.filter(obj => {
   return obj.id == "b24" || obj.id === "b26" || obj.id === "b36" || obj.id === "b41" || obj.id === "b44"
   || obj.id === "b62" || obj.id === "b65" || obj.id === "b73" || obj.id === "b86" || obj.id === "b81"
@@ -455,76 +459,119 @@ const deathTiles = grid.filter(obj => {
 })
 
 // Aplicar trampa a las casillas
+
 deathTiles.forEach(element => {
   element.death = true;
 });
 
+// Definición del método que enseña las rojas
+const showRed = function showRed(){ 
+  grid.forEach(element => {
+    if (element.death == true) element.cell.classList.add("red");
+  });
+}
+
 // Quitar comentario de abajo para ver las casillas trampa.
+//showRed();
 
-// grid.forEach(element => {
-//   if (element.death == true){
-//     element.cell.classList.add("red");
-//   }
-// });
-
-
+// Intentos
 let attemps = 1;
+const nAttemps = document.getElementById("n-attemps");
 
-grid.forEach((element) => {
+// Lógica del juego
 
-    element.cell.addEventListener("click", function establishColor() {     
+grid.forEach((boxClicked) => {
 
-      element.adjacentCells.forEach((e) => {
+  boxClicked.cell.addEventListener("click", function establishColor() {     
 
-        const selectedCell = grid.find((cell) => cell.id === e);
+    boxClicked.adjacentCells.forEach((e) => {
 
-        if (selectedCell.head && selectedCell.cell.classList.contains("green") && element.death == false && !element.cell.classList.contains("green")) {    // si pulsas una sin muerte
-            
+        const yourCell = grid.find((cell) => cell.id === e);
+        
+        // Si clicas verde
+        if (yourCell.head && !boxClicked.death && !boxClicked.cell.classList.contains("green")
+        && !boxClicked.cell.classList.contains("yellow")) {
+          
           this.classList.add("green");   
 
-          element.head=true;   // el que clicas
+          boxClicked.head=true;   // el que clicas
 
-          selectedCell.head=false;  // el anterior
+          yourCell.head=false;  // el anterior
 
           this.classList.add("head-color");
 
-          selectedCell.cell.classList.remove("head-color");
-
+          yourCell.cell.classList.remove("head-color");         
           
-        }
-        else if (selectedCell.head && selectedCell.cell.classList.contains("green") && element.death) {    // si pulsas una muerte
+        // Si clicas rojo
+        }else if (yourCell.head && boxClicked.death) {
 
           this.classList.add("red");
-
-          selectedCell.head=false;
-
+          
+          yourCell.head=false;
+          
           setTimeout(endgame, 2000);
-          
-          
-        
-        }
-      });        
-      });
-  });
 
-  let endgame = function() {
+        // Si clicas amarillo
+        }else if (yourCell.head && boxClicked.cell.classList.contains("yellow")){
+
+          this.classList.add("win");
+          yourCell.head=false;
+          yourCell.cell.classList.remove("head-color");
+          resetBtn.parentNode.removeChild(resetBtn);
+          CreateWinPannel(attemps);
+          setTimeout(showRed,1000);
+
+        }
+        
+      });        
+    });
+  });
   
-    grid.forEach(element => {
+  // Lógica de muerte
+  
+  let endgame = function() {
+    
+    grid.forEach(element => { // Restablecer tablero
       element.cell.classList.remove("green");
       element.cell.classList.remove("head-color");
       element.cell.classList.remove("red");
-    });
-  
-    b11.classList.add("green");
-    grid[0].head=true;
-    attemps++;
-  
-  
-    // TO DO 
-  
-    // Hacer tb que por cada pared que
-  
-  }
+  });
+
+  b11.classList.add("green");
+  grid[0].head=true;
+  attemps++;  
+  nAttemps.innerHTML = "Intentos: " + attemps;
+  };
+
+// Botón de Reset
+
+const resetBtn = document.getElementById("reset-button");
+resetBtn.addEventListener("click", endgame);
+
+// WinPannel
+
+function CreateWinPannel(attemps){
+
+    const winMsg = document.createElement("p");
+    winMsg.setAttribute("id", "win-msg");
+    winMsg.setAttribute("class", "win-msg");
+
+    const br = document.createElement("br");
+    const text1 = document.createTextNode(`¡Enhorabuena!`);
+    const text2 = document.createTextNode(`Lo has resuelto en ${attemps} intentos. No está nada mal! `);
+    
+    winMsg.appendChild(text1);
+    winMsg.appendChild(br);
+    winMsg.appendChild(text2);
+
+
+    const placeToSet = document.getElementById("win-pannel");
+    placeToSet.appendChild(winMsg);
+
+}
+
+
+
 
 /*/ Definir el cuadrado de juego
 const square = document.getElementById("square");

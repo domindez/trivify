@@ -288,6 +288,7 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
 
 .juegos__tittle{
     margin-top: 30px;
+
 }
 
 .juegos__subtittle{
@@ -296,22 +297,26 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
 }
 
 .game{
+    width: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px; 
+}
 
+.n-attemps{
+ margin-bottom: -10px;
+ font-size: 1em;
 }
 
 .square{
     background-color: gray;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
-    grid-column: auto auto;
     height: auto;
     width: auto;
     border: solid black 1px;
-    margin-top: 30px;
-
+    margin-top: 20px;
 }
 
 .square__button{
@@ -335,6 +340,30 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
 
 }
 
-.end{
+.yellow{
     background-color: #ffee8b;
+}
+
+.win{
+    background-color: plum;
+}
+
+.reset-button{
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: #c4f9ff;
+    box-shadow: 2px 2px 2px #020e033a;
+    border: solid 2px #40e3f5;
+    font-size: 1em;
+}
+
+.reset-button:active{
+    box-shadow: none;
+}
+
+.win-pannel{
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: 500;
 }

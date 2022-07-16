@@ -42,6 +42,7 @@
     <h3 class="juegos__subtittle">¡Conecta el cuadrado verde con el amarillo!</h2>
 
     <section class="game">
+        <p class="n-attemps" id="n-attemps">Intentos: 1</p>
         <div id="square" class="square">
 
             <button id="b11" class="square__button green"></button>
@@ -97,10 +98,17 @@
             <button id="b93" class="square__button"></button>                   
             <button id="b94" class="square__button"></button>                   
             <button id="b95" class="square__button"></button>                   
-            <button id="b96" class="square__button end"></button>                 
+            <button id="b96" class="square__button yellow"></button>                 
                  
-            
         </div>
+
+        
+            <button class="reset-button" id="reset-button">Reset</button>
+
+
+        <div class="win-pannel" id="win-pannel"></div>
+        
+
     </section>
 
     <footer class="footer">
@@ -111,6 +119,6 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script type="module" src="scripts.js"></script>
 </body>
 </html>
