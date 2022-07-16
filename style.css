@@ -216,6 +216,8 @@ a{
 
 .contact{
     padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
