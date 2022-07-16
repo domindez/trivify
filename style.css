@@ -128,9 +128,10 @@ a{
     margin: 25px;
     box-shadow: 1px 1px 8px #02201a3a;
     border-radius: 4px;
-    width: 440px;
-    height: 480px;
+    width: auto;
+    height: auto;
     transition: 0.3s;    
+    max-width: 400px;
 }
 
 .product:hover{
@@ -155,7 +156,7 @@ a{
     }
 
     .product__img{
-        min-width: 440px;
+        min-width: auto;
     }
 
     .top-bar__toggle-menu{
@@ -218,7 +219,7 @@ a{
 
 .contact__form{
     margin: 20px;
-    width: 400px;
+    width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 2fr 1fr;     
@@ -368,4 +369,6 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     margin-top: 30px;
     font-size: 1.2em;
     font-weight: 500;
+    margin-right: 30px;
+    margin-left: 30px; 
 }
