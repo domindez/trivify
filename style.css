@@ -187,6 +187,19 @@ a{
     .main-menu__item:hover{
         width: auto;
     }
+
+    .contact__form{
+
+        width: 600px;
+    }
+
+    .contact__form input, .contact__form label{
+        margin-top: 5px;
+        height: 30px;
+        width: 100%;
+        
+    }
+    
 }
 
 .button{
@@ -212,6 +225,10 @@ a{
     text-align: center;
 }
 
+
+
+
+
 /* -------------------------- Contacto -------------------------- */
 
 .contact{
@@ -219,7 +236,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #1a1b1d;
     color: #798b95;    
 }
@@ -231,6 +248,7 @@ a{
     margin-bottom: 50px;
     display: grid;
     justify-content: space-around;
+    column-gap: 15px;
     max-width: 300px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 2fr 1fr;     
@@ -239,6 +257,7 @@ a{
 .contact__form input, .contact__form label{
     margin-top: 5px;
     height: 30px;
+    width: 100%;
     
 }
 
