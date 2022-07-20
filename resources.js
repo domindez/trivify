@@ -65,7 +65,8 @@ export function CreateShareIcons(attemps){
 
   function share(){
     navigator.share({
-      title: pageTittle,
+      title: 'El Trivigame diario',
+      text: pageTittle,
       url: pageUrl,
     })
 
