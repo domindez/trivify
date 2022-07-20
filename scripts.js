@@ -1,5 +1,5 @@
-//import myFunc from "./resources.js"
-//const {  } = myFunc;
+import CreateWinPannel, { CreateShareIcons } from "./resources.js"
+
 
 // Toggle Menu
 
@@ -519,7 +519,9 @@ grid.forEach((boxClicked) => {
           yourCell.cell.classList.remove("head-color");
           resetBtn.parentNode.removeChild(resetBtn);
           CreateWinPannel(attemps);
+          CreateShareIcons(attemps);
           setTimeout(showRed,1000);
+          
 
         }
         
@@ -550,25 +552,9 @@ resetBtn.addEventListener("click", endgame);
 
 // WinPannel
 
-function CreateWinPannel(attemps){
-
-    const winMsg = document.createElement("p");
-    winMsg.setAttribute("id", "win-msg");
-    winMsg.setAttribute("class", "win-msg");
-
-    const br = document.createElement("br");
-    const text1 = document.createTextNode(`¡Enhorabuena!`);
-    const text2 = document.createTextNode(`Lo has resuelto en ${attemps} intentos. No está nada mal! `);
-    
-    winMsg.appendChild(text1);
-    winMsg.appendChild(br);
-    winMsg.appendChild(text2);
 
 
-    const placeToSet = document.getElementById("win-pannel");
-    placeToSet.appendChild(winMsg);
 
-}
 
 
 

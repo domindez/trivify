@@ -397,6 +397,8 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     box-shadow: none;
 }
 
+/* -------------------------- Winn Pannel -------------------------- */
+
 .win-pannel{
     margin-top: 30px;
     font-size: 1.2em;
@@ -404,3 +406,41 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     margin-right: 30px;
     margin-left: 30px; 
 }
+
+.share-button-container{
+    display: flex;
+    padding: 16px;
+    box-shadow: 0 4px 8px #00000043;
+    margin-top: 10px;
+}
+
+.share-button-container a i{
+    font-size: 32px;
+}
+
+.share-button-container a{
+    margin: 0px 12px;
+    transition: 500ms;
+}
+
+.share-button-container a:hover{
+    transform: scale(1.2);
+}
+
+.share-button-container .fa-facebook{
+    color:#1877f2;
+}
+
+.share-button-container .fa-twitter{
+    color:#1da1f2;
+}
+
+.share-button-container .fa-linkedin{
+    color:#0077b5;
+}
+
+.share-button-container .fa-whatsapp{
+    color:#25d366;
+}
+
+
