@@ -44,23 +44,24 @@ export function CreateShareIcons(attemps){
   div.setAttribute("class", "share-button-container");
 
   const twIcon = document.createElement("i");
-  const lnIcon = document.createElement("i");
+  const telIcon = document.createElement("i");
   const waIcon = document.createElement("i");
   const shareIcon = document.createElement("i");
 
   twIcon.setAttribute("class", "fab fa-twitter");
-  lnIcon.setAttribute("class", "fab fa-linkedin");
+  telIcon.setAttribute("class", "fab fa-telegram");
   waIcon.setAttribute("class", "fab fa-whatsapp");
   shareIcon.setAttribute("class", "fa-solid fa-share");
 
   const twLink = document.createElement("a");
-  const lnLink = document.createElement("a");
+  const telLink = document.createElement("a");
   const waLink = document.createElement("a");
   const shLink = document.createElement("a");
 
   twLink.setAttribute("href", `https://twitter.com/share?text=${pageTittle}&url=${pageUrl}`);
-  lnLink.setAttribute("href", `https://www.linkedin.com/shareArticle?url=${pageUrl}`);
+  telLink.setAttribute("href", `https://www.linkedin.com/shareArticle?url=${pageUrl}`);
   waLink.setAttribute("href", `https://api.whatsapp.com/send?text=${pageTittle} ${pageUrl}`);
+  telLink.setAttribute("href", `https://telegram.me/share/url?url=${pageUrl}&text=${pageTittle}`);
 
   shLink.addEventListener("click", share)
 
@@ -74,12 +75,12 @@ export function CreateShareIcons(attemps){
   }
 
   twLink.appendChild(twIcon);
-  lnLink.appendChild(lnIcon);
+  telLink.appendChild(telIcon);
   waLink.appendChild(waIcon);
   shLink.appendChild(shareIcon);
 
   div.appendChild(twLink);
-  div.appendChild(lnLink);
+  div.appendChild(telLink);
   div.appendChild(waLink);
   div.appendChild(shLink);
 

@@ -447,4 +447,8 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     color: rgb(75, 92, 239);
 }
 
+.share-button-container .fa-telegram{
+    color: #0088cc;
+}
+
 
