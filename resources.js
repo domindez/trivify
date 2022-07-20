@@ -38,6 +38,7 @@ export function CreateShareIcons(attemps){
   
   let pageUrl = encodeURI(document.location.href);
   let pageTittle = encodeURI(`He resuelto el juego de Trivify en ${attemps} intentos. ¿Puedes hacerlo mejor?`);
+  let pageTittleAlt = `He resuelto el juego de Trivify en ${attemps} intentos. ¿Puedes hacerlo mejor?`;
   
   const div = document.getElementById("share-button-container");
   div.setAttribute("class", "share-button-container");
@@ -66,7 +67,7 @@ export function CreateShareIcons(attemps){
   function share(){
     navigator.share({
       title: 'El Trivigame diario',
-      text: pageTittle,
+      text: pageTittleAlt,
       url: pageUrl,
     })
 
