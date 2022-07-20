@@ -443,4 +443,8 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     color:#25d366;
 }
 
+.share-button-container .fa-share{
+    color: rgb(75, 92, 239);
+}
+
 

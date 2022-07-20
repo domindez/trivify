@@ -42,35 +42,44 @@ export function CreateShareIcons(attemps){
   const div = document.getElementById("share-button-container");
   div.setAttribute("class", "share-button-container");
 
-  const fbIcon = document.createElement("i");
   const twIcon = document.createElement("i");
   const lnIcon = document.createElement("i");
   const waIcon = document.createElement("i");
+  const shareIcon = document.createElement("i");
 
-  fbIcon.setAttribute("class", "fab fa-facebook");
   twIcon.setAttribute("class", "fab fa-twitter");
   lnIcon.setAttribute("class", "fab fa-linkedin");
   waIcon.setAttribute("class", "fab fa-whatsapp");
+  shareIcon.setAttribute("class", "fa-solid fa-share");
 
-  const fbLink = document.createElement("a");
   const twLink = document.createElement("a");
   const lnLink = document.createElement("a");
   const waLink = document.createElement("a");
+  const shLink = document.createElement("a");
 
-  fbLink.setAttribute("href", `https://www.facebook.com/sharer.php?u=${pageUrl}`);
-  twLink.setAttribute("href", `https://twitter.com/share?url=${pageUrl}&text=${pageTittle}`);
-  lnLink.setAttribute("href", `https://www.linkedin.com/shareArticle?url=${pageUrl}&title=${pageTittle}`);
+  twLink.setAttribute("href", `https://twitter.com/share?text=${pageTittle}&url=${pageUrl}`);
+  lnLink.setAttribute("href", `https://www.linkedin.com/shareArticle?url=${pageUrl}`);
   waLink.setAttribute("href", `https://api.whatsapp.com/send?text=${pageTittle} ${pageUrl}`);
 
-  fbLink.appendChild(fbIcon);
+  shLink.addEventListener("click", share)
+
+  function share(){
+    navigator.share({
+      title: pageTittle,
+      url: pageUrl,
+    })
+
+  }
+
   twLink.appendChild(twIcon);
   lnLink.appendChild(lnIcon);
   waLink.appendChild(waIcon);
+  shLink.appendChild(shareIcon);
 
-  div.appendChild(fbLink);
   div.appendChild(twLink);
   div.appendChild(lnLink);
   div.appendChild(waLink);
+  div.appendChild(shLink);
 
 
 }
