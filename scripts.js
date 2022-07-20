@@ -518,8 +518,8 @@ grid.forEach((boxClicked) => {
           yourCell.head=false;
           yourCell.cell.classList.remove("head-color");
           resetBtn.parentNode.removeChild(resetBtn);
-          CreateWinPannel(attemps);
           CreateShareIcons(attemps);
+          CreateWinPannel(attemps);
           setTimeout(showRed,1000);
           
 

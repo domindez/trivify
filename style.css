@@ -360,6 +360,7 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     height: 50px;
     width: 50px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .green{
@@ -445,6 +446,7 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
 
 .share-button-container .fa-share{
     color: rgb(75, 92, 239);
+    cursor: pointer;
 }
 
 .share-button-container .fa-telegram{
