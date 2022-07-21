@@ -7,6 +7,8 @@
 
 export default function CreateWinPannel(attemps){
 
+  const fragment = document.createDocumentFragment();
+
   const winMsgText = `Lo has resuelto en ${attemps} intentos.`
   const winMsgText2 = `¡Comparte tu resultado y reta a tus amigos!`
 
@@ -26,9 +28,11 @@ export default function CreateWinPannel(attemps){
   winMsg.appendChild(br2);
   winMsg.appendChild(text3);
 
+  fragment.appendChild(winMsg);
+
 
   const placeToSet = document.getElementById("win-pannel");
-  placeToSet.appendChild(winMsg);
+  placeToSet.appendChild(fragment);
 
 }
 
@@ -36,6 +40,8 @@ export default function CreateWinPannel(attemps){
 
 export function CreateShareIcons(attemps){
   
+  const fragmentGame = document.createDocumentFragment();
+
   let pageUrl = encodeURI(document.location.href);
   let pageTittle = encodeURI(`He resuelto el juego de Trivify en ${attemps} intentos. ¿Puedes hacerlo mejor?`);
   let pageTittleAlt = `He resuelto el juego de Trivify en ${attemps} intentos. ¿Puedes hacerlo mejor?`;
@@ -79,13 +85,31 @@ export function CreateShareIcons(attemps){
   waLink.appendChild(waIcon);
   shLink.appendChild(shareIcon);
 
-  div.appendChild(twLink);
-  div.appendChild(telLink);
-  div.appendChild(waLink);
-  div.appendChild(shLink);
+  fragmentGame.appendChild(twLink);
+  fragmentGame.appendChild(telLink);
+  fragmentGame.appendChild(waLink);
+  fragmentGame.appendChild(shLink);
+
+  div.appendChild(fragmentGame);
 
 
 }
 
+/*/ Definir el cuadrado de juego
+const square = document.getElementById("square");
 
+// Crear el fragment
+const fragmentGame = document.createDocumentFragment();
+
+// Crear las cajitas
+const gameBox = document.createElement("button");
+
+// Añadir la clase clase a la cajita
+gameBox.classList.add("square__button");
+
+// Añadir el elemento al fragment
+fragmentGame.appendChild(gameBox);
+
+// Añadir el fragment al DOM
+square.appendChild(fragmentGame);*/
 
