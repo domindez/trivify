@@ -202,6 +202,7 @@ a{
         padding-left: 400px;
         padding-right: 400px;
         width: auto;
+        box-shadow: none;
     }
 
     .lema{
@@ -415,7 +416,7 @@ Para poner el futer abajo aunque el body sea menos que el tamaño de la pantalla
     display: flex;
     padding: 16px;
     box-shadow: 0 4px 8px #00000043;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .share-button-container a i{
