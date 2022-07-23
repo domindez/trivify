@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/bf98699826.js" crossorigin="anonymous"></script>
     <title>Juego de Trivify</title>
 </head>
@@ -43,7 +39,7 @@
         <h2 class="lema">Nos dedicamos a llenar tu bar</h2>
     </header>
 
-    <h1 class="juegos__tittle">El juego de Trivify</h1>
+    <h1 class="section__tittle">El juego de Trivify</h1>
     <h3 class="juegos__subtittle">¡Encuentra el camino!</h2>
 
     <section class="game">
@@ -113,6 +109,38 @@
         
         <div class="win-pannel" id="win-pannel"></div>    
         
+        <template id="template-share">
+            
+            <div class="share-button-container">
+                
+                <a id="tw-link">
+                    <i class="fab fab fa-twitter"></i>
+                </a>
+                <a id="te-link">
+                    <i class="fab fab fa-telegram"></i>
+                </a>
+                <a id="wa-link">
+                    <i class="fab fab fa-whatsapp"></i>
+                </a>
+                <a id="sh-link">
+                    <i class="fa-solid fa-share"></i>
+                </a>
+    
+    
+    
+            </div>
+
+        </template>
+        
+        <template id="template-win">
+            
+            <p id="win-pannel">¡Enhorabuena! <br>
+                lo has resuelto en <span class="win-pannel__attemps">${attemps}</span> intentos.<br>
+                ¡Comparte el resultado y reta a tus amigos!        
+            </p>
+
+        </template>
+
     </section>
 
     <footer class="footer">
@@ -123,6 +151,6 @@
         </div>
     </footer>
 
-    <script type="module" src="scripts.js"></script>
+    <script type="module" src="js/scripts.js"></script>
 </body>
 </html>

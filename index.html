@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">        
+    <link rel="stylesheet" href="css/style.css">     
+    <script src="https://kit.fontawesome.com/bf98699826.js" crossorigin="anonymous"></script>   
     <title>Trivify</title>
 </head>
 <body>
@@ -38,13 +39,19 @@
         <h2 class="lema">Nos dedicamos a llenar tu bar</h2>
     </header>
 
-    <h1 class="juegos__tittle">Juegos para llenar tu bar</h1>
+    <!---------------------------     Juegos     --------------------------->
+    <div class="tittle-container">
+        <h1 class="section__tittle">Juegos para llenar tu bar</h1>
+    </div>
 
-    <section class="juegos">
-        <div class="product">            
+    <section class="section">
+
+        <div class="product">   
+            <div class="product__img">        
             <img class="product__img" src="img/trivial-image.jpg">
+            </div> 
             <div class="product__info">
-                <h2 class="product__info--tittle">Trivial para bares</h2>
+                <h2 class="product-info__tittle">Trivial para bares</h2>
                 <p class="product__info--p">Un evento rentable y eficaz para atraer nuevos clientes y fidelizarlos. 
                     Aumenta la facturación ofreciendo un evento divertido y de calidad.
                 </p>
@@ -66,18 +73,61 @@
         </div>
     </section>
 
+    <!---------------------------     Más Productos     --------------------------->
+    <div class="tittle-container">
+        <h2 class="section__tittle">Más productos para tu Bar</h2>
+    </div>
+    
+    <section class="section">
+
+        <div class="product">
+            <div class="product__img">
+                <img class="product__img--img" src="img/carta-digital-qr.jpg" alt="carta-digital-qr-premium-imagen">
+            </div>
+            <div class="product__info">
+                <h2 class="product-info__tittle">Carta Premium QR</h2>
+                <p class="product-info__p">Una carta totalmente personalizada para tu bar.
+                     Echa un vistazo a Unade muestra
+                </p>
+                <button class="button">Ver ejemplo</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product__img">
+                <img class="product__img--img" src="img/vapes-desechables-para-bares.jpg" alt="vapes desechables imagen">
+            </div>
+            <div class="product__info">
+                <h2 class="product-info__tittle">Vapes desechables</h2>
+                <p class="product-info__p">Vapes desechables especiales para bares. Un producto con una demanda creciente y unos
+                     márgenes muy rentables para ti. 
+                </p>
+                <button class="button">Más información</button>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!---------------------------     Contacto     --------------------------->
+
     <section class="contact" id="contact" >
         <h2 class="section-tittle">Contacta con nosotros</h2>
-        <form class="contact__form">                      
-            <input class="contact__form-name" type="text" required placeholder="Nombre">
-            <input class="contact__form-email" type="text" required placeholder="Email">
-            <input class="contact__form-phone" type="text" placeholder="Teléfono">
-            <label class="contact__form-textphone" for="contact-by-phone">¿Te llamamos?:</label>
-            <input class="contact__form-checkphone" id="contact-by-phone" type="checkbox">
-            <textarea class="contact__form-text-to-submit" required placeholder="Escribe tu mensaje..." rows="" cols=""></textarea>
-            <input class="button contact__form--button" type="submit">
-        </form>
+
+        <div class="contact-details">
+            <div>
+                <a href="https://api.whatsapp.com/send?phone=34660882876&text=Hola!%20Quiero%20que%20me%20llam%C3%A9is%20para%20informarme.">
+                    <i class="fa-brands fa-whatsapp-square"></i>
+                </a>
+            </div>
+            <div>
+                <h4>info@trivify.es</h3>
+                <a href="tel:+34660882876">660882876</a>
+            </div>
+        </div>
+    
     </section>
+
 
     <footer class="footer">
         <div class="footer__menu">
@@ -87,6 +137,6 @@
         </div>
     </footer>
 
-    <script type="module" src="scripts.js"></script>
+    <script type="module" src="js/scripts.js"></script>
 </body>
 </html>

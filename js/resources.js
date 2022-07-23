@@ -3,37 +3,20 @@
    Definiciones de métodos
 | -------------------------*/
 
-// WinPannel
+// WinPannel con Template
 
 export default function CreateWinPannel(attemps){
+    
+  const winPpannel = document.getElementById("win-pannel");
 
+  const template = document.getElementById("template-win").content;
   const fragment = document.createDocumentFragment();
-
-  const winMsgText = `Lo has resuelto en ${attemps} intentos.`
-  const winMsgText2 = `¡Comparte tu resultado y reta a tus amigos!`
-
-  const winMsg = document.createElement("p");
-  winMsg.setAttribute("id", "win-msg");
-  winMsg.setAttribute("class", "win-msg");
-
-  const br = document.createElement("br");
-  const br2 = document.createElement("br");
-  const text1 = document.createTextNode(`¡Enhorabuena!`);
-  const text2 = document.createTextNode(winMsgText);
-  const text3 = document.createTextNode(winMsgText2);
   
-  winMsg.appendChild(text1);
-  winMsg.appendChild(br);
-  winMsg.appendChild(text2);
-  winMsg.appendChild(br2);
-  winMsg.appendChild(text3);
-
-  fragment.appendChild(winMsg);
-
-
-  const placeToSet = document.getElementById("win-pannel");
-  placeToSet.appendChild(fragment);
-
+  template.querySelector("span").textContent = attemps;
+  const clone = template.cloneNode(true);
+  fragment.appendChild(clone);
+  
+  winPpannel.appendChild(fragment);
 }
 
 // Share Icons
@@ -94,22 +77,3 @@ export function CreateShareIcons(attemps){
 
 
 }
-
-/*/ Definir el cuadrado de juego
-const square = document.getElementById("square");
-
-// Crear el fragment
-const fragmentGame = document.createDocumentFragment();
-
-// Crear las cajitas
-const gameBox = document.createElement("button");
-
-// Añadir la clase clase a la cajita
-gameBox.classList.add("square__button");
-
-// Añadir el elemento al fragment
-fragmentGame.appendChild(gameBox);
-
-// Añadir el fragment al DOM
-square.appendChild(fragmentGame);*/
-

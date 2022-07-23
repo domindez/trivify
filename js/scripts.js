@@ -8,6 +8,14 @@ const menu = document.getElementById("main-menu");
 
 toggleMenu.addEventListener("click", () => menu.classList.toggle("menu-show"))
 
+window.onclick = function(event){
+  if (!event.target.matches(".top-bar__toggle-menu")){
+    
+    if (menu.classList.contains("menu-show")) menu.classList.remove("menu-show");
+  }
+}
+
+
 // Lógica del Juego
 
 const b11 = document.getElementById("b11");
@@ -480,54 +488,53 @@ const nAttemps = document.getElementById("n-attemps");
 
 // Lógica del juego
 
-grid.forEach((boxClicked) => {
+grid.forEach((element) => {
 
-  boxClicked.cell.addEventListener("click", function establishColor() {     
+  if(element.cell){ // <-- Si existe el elemente ( es decir si estamos en la pagina correcta)
 
-    boxClicked.adjacentCells.forEach((e) => {
+    element.cell.addEventListener("click", function establishColor() {     
 
-        const yourCell = grid.find((cell) => cell.id === e);
-        
-        // Si clicas verde
-        if (yourCell.head && !boxClicked.death && !boxClicked.cell.classList.contains("green")
-        && !boxClicked.cell.classList.contains("yellow")) {
+      element.adjacentCells.forEach((e) => {
+
+          const yourCell = grid.find((cell) => cell.id === e);
           
-          this.classList.add("green");   
+          // Si clicas verde
+          if (yourCell.head && !element.death && !element.cell.classList.contains("green")
+          && !element.cell.classList.contains("yellow")) {
+            
+            this.classList.add("green");   
 
-          boxClicked.head=true;   // el que clicas
+            element.head=true;   // el que clicas
 
-          yourCell.head=false;  // el anterior
+            yourCell.head=false;  // el anterior
 
-          this.classList.add("head-color");
+            this.classList.add("head-color");
 
-          yourCell.cell.classList.remove("head-color");         
-          
-        // Si clicas rojo
-        }else if (yourCell.head && boxClicked.death) {
+            yourCell.cell.classList.remove("head-color");         
+            
+          // Si clicas rojo
+          }else if (yourCell.head && element.death) {
 
-          this.classList.add("red");
-          
-          yourCell.head=false;
-          
-          setTimeout(endgame, 2000);
+            this.classList.add("red");
+            
+            yourCell.head=false;
+            
+            setTimeout(endgame, 2000);
 
-        // Si clicas amarillo
-        }else if (yourCell.head && boxClicked.cell.classList.contains("yellow")){
+          // Si clicas amarillo
+          }else if (yourCell.head && element.cell.classList.contains("yellow")){
 
-          this.classList.add("win");
-          yourCell.head=false;
-          yourCell.cell.classList.remove("head-color");
-          resetBtn.parentNode.removeChild(resetBtn);
-          CreateShareIcons(attemps);
-          CreateWinPannel(attemps);
-          setTimeout(showRed,1000);
-          
-
-        }
-        
-      });        
-    });
-  });
+            this.classList.add("win");
+            yourCell.head=false;
+            yourCell.cell.classList.remove("head-color");
+            resetBtn.parentNode.removeChild(resetBtn);
+            CreateShareIcons(attemps);
+            CreateWinPannel(attemps);
+            setTimeout(showRed,1000);            
+          }          
+        });        
+      });
+  }});
   
   // Lógica de muerte
   
@@ -548,7 +555,9 @@ grid.forEach((boxClicked) => {
 // Botón de Reset
 
 const resetBtn = document.getElementById("reset-button");
-resetBtn.addEventListener("click", endgame);
+if (resetBtn){
+  resetBtn.addEventListener("click", endgame);
+}
 
 // WinPannel
 
@@ -575,4 +584,4 @@ gameBox.classList.add("square__button");
 fragmentGame.appendChild(gameBox);
 
 // Añadir el fragment al DOM
-square.appendChild(fragmentGame);*/
+square.appendChild(fragmentGame)*/
