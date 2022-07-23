@@ -86,6 +86,7 @@ a{
     position: absolute;
     width: 100%;
     z-index: 5;
+    box-shadow: 1px 1px 10px #25313760;
     
 }
 
@@ -106,7 +107,7 @@ a{
 
 .main-menu__item:hover{
     background-color: #fdce57;
-    width:45vh;
+    width:65vh;
 }
 
 /* -------------------------- Juegos -------------------------- */
